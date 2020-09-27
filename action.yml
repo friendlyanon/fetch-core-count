@@ -1,0 +1,23 @@
+name: Fetch CPU core count
+
+description: Puts the logical core count of the action runner into output variables
+
+author: friendlyanon
+
+branding:
+  icon: cpu
+  color: blue
+
+outputs:
+  count:
+    description: Logical core count
+
+  plus_one:
+    description: Logical core count + 1
+
+  plus_two:
+    description: Logical core count + 2
+
+runs:
+  using: node12
+  main: main.js

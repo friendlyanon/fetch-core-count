@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Read logical core count
+        id: cores
+        uses: ./
+
+      - name: Print core count
+        run: echo ${{ steps.cores.outputs.count }}
+
+      - name: Print core count + 1
+        run: echo ${{ steps.cores.outputs.plus_one }}
+
+      - name: Print core count + 2
+        run: echo ${{ steps.cores.outputs.plus_two }}
